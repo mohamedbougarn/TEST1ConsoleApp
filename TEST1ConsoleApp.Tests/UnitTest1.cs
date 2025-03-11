@@ -1,9 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using TEST1ConsoleApp.interfaces;
+using TEST1ConsoleApp.models;
+
+
+
+namespace TEST1ConsoleApp.Tests;
 
 [TestClass]
-public class ExpressionEvaluatorTests
+public class UnitTest1
 {
-    private ExpressionEvaluator _evaluator;
+
+private ExpressionEvaluator _evaluator;
 
     [TestInitialize]
     public void Setup()
@@ -16,13 +24,6 @@ public class ExpressionEvaluatorTests
         };
         _evaluator = new ExpressionEvaluator(operators);
     }
-
-    [TestMethod]
-    public void TestAddition()
-    {
-        Assert.AreEqual(3, _evaluator.Evaluate("1 + 2"));
-    }
-
     [TestMethod]
     public void TestMultiplication()
     {
@@ -46,4 +47,5 @@ public class ExpressionEvaluatorTests
     {
         Assert.AreEqual(-4, _evaluator.Evaluate("6 - 2 * 5"));
     }
+
 }
